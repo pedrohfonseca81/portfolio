@@ -1,0 +1,48 @@
+<header x-data="{ showMenu: false }">
+  <div class="w-full flex justify-center">
+    <div class="w-5/6 md:w-1/2 h-12 flex justify-between items-center">
+      <.link patch={~p"/"}>
+        <h3 class="text-lg">pedrofonseca.dev</h3>
+      </.link>
+      <div class="hidden md:block">
+        <ul class="flex gap-3">
+          <.link patch={~p"/about_me"}>
+            <li class="text-lg">about me</li>
+          </.link>
+          <.link patch={~p"/articles"}>
+            <li class="text-lg">articles</li>
+          </.link>
+          <.link patch={~p"/projects"}>
+            <li class="text-lg">projects</li>
+          </.link>
+        </ul>
+      </div>
+      <div class="block md:hidden">
+        <.button @click="showMenu = !showMenu">
+          <.icon name="hero-bars-2" />
+        </.button>
+      </div>
+    </div>
+  </div>
+  <div class="block md:hidden w-full h-full fixed bg-white z-[999]" x-show="showMenu" x-transition>
+    <ul class="flex flex-col gap-3 items-center">
+      <.link patch={~p"/about_me"}>
+        <li class="text-3xl">about me</li>
+      </.link>
+      <.link patch={~p"/articles"}>
+        <li class="text-3xl">articles</li>
+      </.link>
+      <.link patch={~p"/projects"}>
+        <li class="text-3xl">projects</li>
+      </.link>
+    </ul>
+  </div>
+</header>
+<main>
+  <.flash_group flash={@flash} />
+  <div class="w-full flex justify-center mt-6">
+    <div class="w-5/6 md:w-1/2">
+      <%= @inner_content %>
+    </div>
+  </div>
+</main>

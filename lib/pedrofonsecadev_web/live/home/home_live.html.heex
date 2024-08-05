@@ -1,0 +1,25 @@
+<div>
+    <div class="flex flex-col gap-2 mb-6">
+        <.link href={URI.parse("https://www.linkedin.com/in/pedro-henrique-fonseca-991812206")} target="blank">
+            <.button class="w-full">LinkedIn</.button>
+        </.link>
+        <.link href={URI.parse("https://github.com/pedrohfonseca81")} target="blank">
+            <.button class="w-full">Github</.button>
+        </.link>
+    </div>
+    <div class="flex">
+        <div class="flex w-full flex-col gap-2">
+            <.link patch={~p"/projects"} class="text-lg font-semibold">explore projects</.link>
+            <.link patch={~p"/articles"} href="" class="text-lg font-semibold">read my articles</.link>
+            <.link patch={~p"/carousel_list"} href="" class="text-lg font-semibold">see my carousel list</.link>
+        </div>
+        <div class="flex flex-col gap-2 w-full items-end">
+            <.link href={~p"/pdf/CV-eng.pdf"} target="blank">
+                <.button class="px-8">Download CV</.button>
+            </.link>
+            <.link href={~p"/pdf/CV-pt_br.pdf"} target="blank">
+                <.button class="px-8">Download Portuguese CV</.button>
+            </.link>
+        </div>
+    </div>
+</div>

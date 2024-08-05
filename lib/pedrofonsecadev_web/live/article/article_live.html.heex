@@ -1,0 +1,25 @@
+<style>
+    .article-body p {
+        margin-bottom: 16px;
+    }
+
+    .article-body pre,.makeup.elixir  {
+        background-color: whitesmoke;
+        border: 14px;
+    }
+</style>
+<style><%= raw Makeup.stylesheet(:vs_style, "makeup") %></style>
+
+<div>
+    <div>
+        <p class="text-xl font-semibold">
+            <%= @article.title %>
+        </p>
+        <small>
+            <%= @article.date %>
+        </small>
+    </div>
+    <div class="article-body">
+        <%= raw @article.body |> NimblePublisher.highlight() %>
+    </div>
+</div>

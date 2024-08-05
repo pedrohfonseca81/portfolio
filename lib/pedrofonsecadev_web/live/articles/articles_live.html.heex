@@ -1,0 +1,16 @@
+<div>
+    <ul>
+        <%= for article <- @articles do %>
+            <.link patch={~p"/articles/#{article.id}"}>
+                <li>
+                    <p class="text-xl font-semibold">
+                        <%= article.title %>
+                    </p>
+                    <small>
+                        <%= article.date %>
+                    </small>
+                </li>
+            </.link>
+            <% end %>
+    </ul>
+</div>

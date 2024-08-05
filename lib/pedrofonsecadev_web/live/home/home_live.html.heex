@@ -9,9 +9,15 @@
     </div>
     <div class="flex">
         <div class="flex w-full flex-col gap-2">
-            <.link patch={~p"/projects"} class="text-lg font-semibold">explore projects</.link>
-            <.link patch={~p"/articles"} href="" class="text-lg font-semibold">read my articles</.link>
-            <.link patch={~p"/carousel_list"} href="" class="text-lg font-semibold">see my carousel list</.link>
+            <.link patch={~p"/projects"} class="text-lg font-semibold">explore projects
+                <.icon name="hero-arrow-right" />
+            </.link>
+            <.link patch={~p"/articles"} href="" class="text-lg font-semibold">read my articles
+                <.icon name="hero-arrow-right" />
+            </.link>
+            <.link patch={~p"/carousel_list"} href="" class="text-lg font-semibold">see my carousel list
+                <.icon name="hero-arrow-right" />
+            </.link>
         </div>
         <div class="flex flex-col gap-2 w-full items-end">
             <.link href={~p"/pdf/CV-eng.pdf"} target="blank">

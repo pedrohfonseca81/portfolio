@@ -230,7 +230,7 @@ defmodule PedrofonsecadevWeb.CoreComponents do
     <button
       type={@type}
       class={[
-        "phx-submit-loading:opacity-75 bg-white border py-2 px-3",
+        "phx-submit-loading:opacity-75 bg-white border border-black py-2 px-3",
         "text-sm font-semibold leading-6 text-black",
         @class
       ]}
@@ -597,9 +597,10 @@ defmodule PedrofonsecadevWeb.CoreComponents do
     """
   end
 
+  attr :class, :string, default: nil
   def badge(assigns) do
     ~H"""
-      <div class="bg-zinc-900 text-white text-xs font-medium me-2 px-2.5 py-0.5 rounded">
+      <div class={["bg-white flex justify-center items-center border border-black text-black text-xs font-medium px-2.5 py-0.5", @class]}>
         <%= render_slot(@inner_block) %>
       </div>
     """

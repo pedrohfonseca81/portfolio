@@ -24,19 +24,21 @@
       </div>
     </div>
   </div>
-  <div class="block md:hidden w-full h-full fixed bg-white z-[999]" x-show="showMenu" x-transition>
-    <ul class="flex flex-col gap-3 items-center">
-      <.link patch={~p"/about_me"}>
-        <li class="text-3xl">about me</li>
-      </.link>
-      <.link patch={~p"/articles"}>
-        <li class="text-3xl">articles</li>
-      </.link>
-      <.link patch={~p"/projects"}>
-        <li class="text-3xl">projects</li>
-      </.link>
-    </ul>
-  </div>
+  <template x-if="showMenu">
+    <div class="w-full h-full fixed bg-white z-[999]">
+      <ul class="flex flex-col gap-3 items-center">
+        <.link patch={~p"/about_me"}>
+          <li class="text-3xl">about me</li>
+        </.link>
+        <.link patch={~p"/articles"}>
+          <li class="text-3xl">articles</li>
+        </.link>
+        <.link patch={~p"/projects"}>
+          <li class="text-3xl">projects</li>
+        </.link>
+      </ul>
+    </div>
+  </template>
 </header>
 <main>
   <.flash_group flash={@flash} />

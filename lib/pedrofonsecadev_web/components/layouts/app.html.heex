@@ -25,7 +25,8 @@
     </div>
   </div>
   <template x-if="showMenu">
-    <div class="w-full h-full fixed bg-white z-[999]">
+    <div class="w-full h-full fixed bottom-0 bg-white z-[999]">
+      <.navbar />
       <ul class="flex flex-col gap-3 items-center">
         <.link patch={~p"/about_me"}>
           <li class="text-3xl">about me</li>

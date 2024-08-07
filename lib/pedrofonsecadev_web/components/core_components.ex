@@ -15,6 +15,7 @@ defmodule PedrofonsecadevWeb.CoreComponents do
   Icons are provided by [heroicons](https://heroicons.com). See `icon/1` for usage.
   """
   use Phoenix.Component
+  import Phoenix.VerifiedRoutes, only: [sigil_p: 2]
 
   alias Phoenix.LiveView.JS
   import PedrofonsecadevWeb.Gettext
@@ -598,11 +599,32 @@ defmodule PedrofonsecadevWeb.CoreComponents do
   end
 
   attr :class, :string, default: nil
+
   def badge(assigns) do
     ~H"""
-      <div class={["bg-white flex justify-center items-center border border-black text-black text-xs font-medium px-2.5 py-0.5", @class]}>
-        <%= render_slot(@inner_block) %>
+    <div class={[
+      "bg-white flex justify-center items-center border border-black text-black text-xs font-medium px-2.5 py-0.5",
+      @class
+    ]}>
+      <%= render_slot(@inner_block) %>
+    </div>
+    """
+  end
+
+  def navbar(assigns) do
+    ~H"""
+    <div class="w-full my-2 flex justify-center">
+      <div class="w-5/6 h-12 flex justify-between items-center">
+        <.link patch="/">
+          <h3 class="text-lg">pedrofonseca.dev</h3>
+        </.link>
+        <div class="block md:hidden">
+          <.button @click="showMenu = !showMenu">
+            <.icon name="hero-bars-2" />
+          </.button>
+        </div>
       </div>
+    </div>
     """
   end
 
